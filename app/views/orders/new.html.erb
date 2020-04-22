@@ -1,0 +1,13 @@
+<h1>New Order</h1>
+
+<%= simple_form_for @order do |f|%>
+  <%= f.input :user_id %>
+  <%= f.simple_fields_for :order_items do |m| %>
+    <%=m.input :product_id, as: :select, collection: @products%>
+    <%=m.input :amount %>
+    <%=m.input :price %>
+  <%end%>
+  <%=f.submit "Submit", disable_with: 'Submiting...'%>
+<%end%>
+
+

@@ -1,0 +1,8 @@
+<h1>Order <%= @order.id %> detail</h1>
+
+<h2 class="created_at">Created at: <%= @order.created_at %></h2>
+<ul>
+  <% @items.each do |i| %>
+    <li> <%= i.product.name %> , amount: <%= i.amount %>, price: <%= i.price %> </li>
+  <%end%>
+</ul>
